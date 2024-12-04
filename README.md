@@ -167,9 +167,19 @@ $ ssh-keygen -t ed25519 -C "[info]" -f ~/.ssh/<name of key>
 ** Do not give password/passphrase.
 *** As info I provided my email address
 
-Add Key To GitHub
 
-Log in to your GitHub account, then click in the top right corner github image profile and go to `settings/SSH and GPG keys/New SSH key/` then provide a descriptive name to the new SSH key access and copy/paste the `public key` generated.
+Edit `~/.ssh/config file`
+In this file add the private key path
+```
+ ~/.ssh $ cat config
+
+Host github.com
+  IdentityFile ~/.ssh/<name of key>
+```
+
+Copy Public Key details To GitHub
+
+Log in to your GitHub account, then click in the top right corner github image profile and go to `settings/SSH and GPG keys/New SSH key` then provide a descriptive name to the new SSH key access and copy/paste the `public key` generated.
 
 
 Test the connection
